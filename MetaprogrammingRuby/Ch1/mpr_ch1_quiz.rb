@@ -1,14 +1,14 @@
-puts 'How is Metaprogramming defined in this chapter'
+puts 'How is Metaprogramming defined in this chapter?'
 answer = gets.chomp
 puts 'Metaprogramming is code that writes code'
 puts "you said: '#{answer}'"
 
-puts 'What is introspection'
+puts 'What is introspection?'
 answer = gets.chomp
 puts 'The ability for code to "know" about itself'
 puts "you said: '#{answer}'"
 
-puts 'What is the more formal definition of Metaprogramming given later'
+puts 'What is the more formal definition of Metaprogramming given later?'
 answer = gets.chomp
 puts 'Metaprogramming is writing code that manipulates language constructs at runtime.'
 puts "you said: '#{answer}'"
