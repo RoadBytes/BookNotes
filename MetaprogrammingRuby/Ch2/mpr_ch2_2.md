@@ -1,0 +1,82 @@
+# The Object Model
+
+## Namespaces
+## Loading and Requiring
+## Ruby Method
+## Method look up
+  * The Kernel
+## Method execution
+## Refinements
+
+
+# Namespaces
+
+* Story time!
+  * you see `class TEXT`
+  * change to `class Text`
+  * Conflicts with ActionMailer, there's a `module Text`
+  * So, you wrap `class Text` with a `module` as in:
+
+~~~
+  module Bookworm
+    class Text
+      ...
+~~~
+
+  * now `Text` can be called through `Bookworm::Text`
+
+# Loading and Requiring
+
+* `load` executes the code every time
+  * scope of constants continue like for class instantiation,
+  * but can take a second argument if you want scope cleared after load
+  * load( 'filename', [true, false]: deletes constants after load )
+* `require` executes the code once
+  * no second argument since requiring libraries are MEANT to access classes
+
+# Ruby Method
+
+* Calling a method does two things
+  1. Method Look up
+  2. execution with `self`
+
+# Method look up
+
+* `obj.my_method`
+  * `obj` is the receiver
+  * `.my_method` is the method
+* ancestor chain is the look up of methods
+  * obj class -> (inserted) modules -> superclass ->
+    superclass modules -> (up and up) -> Object -> Kernel -> BasicObject
+  * `prepend 'module name'` can have module be listed BEFORE class
+  * for multiple `include`s and `prepend`s Ruby ignores the consequential references
+
+# The Kernel
+
+* the `Object` class `include`s `Kernel`
+  * so methods here look like language keywords
+  * these include `print`, `puts`
+* ex: 'awesome_print`
+
+~~~
+module Kernel
+  def ap( object, options = {} )
+    ...
+  end
+end
+~~~
+
+# Method execution
+
+* `self` keyword references method receivers
+
+## `private` methods
+
+* can only be called 'implicitly', ie, cannot have `self.` on it
+
+* top level object is `main` as you start inside that object
+
+# Refinements
+
+* a way to get around monkey patching by creating a local scope
+

@@ -131,3 +131,15 @@ M::C::X # => "a constant"
 * Namespacing is creating a Module to contain constants
 
 # Objects and Classes Wrap-Up
+
+* What's an object?
+  * instance vars, plus
+  * reference to its class
+  * instance methods live in the class
+
+* What's a class
+  * an object, instance of `Class`, plus
+  * instance methods, and
+  * link to superclass
+  * `Class` is a subclass of `Module`, so a class is also a module
+  * class name is a constant reference to the class

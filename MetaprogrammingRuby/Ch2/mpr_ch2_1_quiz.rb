@@ -45,10 +45,19 @@ response = gets.chomp
 puts "Answer: the `Module#constants` method"
 puts "you said: '#{response}'"
 
-# You've finished writing the questions above
-
 puts 'What is a Namespace?'
 response = gets.chomp
 puts 'Answer: a Module that exists to only be a container of constants'
 puts "you said: '#{response}'"
 
+puts 'What is an object?'
+response = gets.chomp
+puts 'Answer: instance vars + reference to its class'
+puts "you said: '#{response}'"
+
+puts 'What is a class?'
+response = gets.chomp
+puts 'Answer: instance of `Class` + instance methods + link to superclass'
+puts "you said: '#{response}'"
+
+# You've finished writing the questions above
